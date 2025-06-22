@@ -13,4 +13,5 @@ HireFlow is a cutting-edge resume scheduling platform designed to revolutionize 
 ->docs for refrence:
 https://docs.google.com/document/d/1Cm2sbPpRjpQW55Go2aFbrC2E9vmj6x1szO-ElQOYPQY/edit?usp=sharing
 
+RoadMap: -> resume parsing → filtering logic → availability scheduling → meeting coordination.
 Open To Collaborate.🌳
