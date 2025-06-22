@@ -3,6 +3,7 @@ const availbilitySchema = new mongoose.Schema({
   user: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "User",
+    required:true
   },
   slots: [
     {
@@ -10,5 +11,5 @@ const availbilitySchema = new mongoose.Schema({
       end: Date,
     },
   ],
-});
+},{timestamps:true});
 export default mongoose.model('Avaibility',availbilitySchema);
