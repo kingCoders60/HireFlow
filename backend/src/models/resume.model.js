@@ -1,9 +1,12 @@
 import mongoose from "mongoose";
-const userSchema = new mongoose.Schema({
-    fileName: String,
-    filePath: String,
+
+const resumeSchema = new mongoose.Schema({
+    fileName: { type: String },
+    filePath: { type: String },
     uploadedBy: { type: mongoose.Schema.Types.ObjectId, ref: 'User' },
-    matchScore: Number,
-    skills: [String],
+    matchScore: { type: Number },
+    skills: [{ type: String }],
     uploadedAt: { type: Date, default: Date.now }
 }, { timestamps: true });
+
+export default mongoose.model('Resume', resumeSchema);
