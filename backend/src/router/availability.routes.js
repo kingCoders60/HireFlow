@@ -1,5 +1,6 @@
 import express from "express";
-import {submitAvailability} from '../controllers/availability.js'
+import {submitAvailability,getAvailabilityByUser} from '../controllers/availability.js'
 const router = express.Router();
 router.post('/',submitAvailability);
+router.get('/:userId',getAvailabilityByUser);
 export default router;

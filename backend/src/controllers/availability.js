@@ -24,4 +24,21 @@ export const submitAvailability = async(req,res)=>{
             message:"Internal Server Error"
         })
     }
+};
+
+export const  getAvailabilityByUser = async (req,res) => {
+try {
+    const {userId} = req.params;
+    const availability = await Avaibility.findOne({user:userId});
+    if(!availability){
+        return res.status(400).json({message:"No availabilty for this user!"});
+    }
+    res.status(200).json(availability);
+
+} catch (error) {
+    console.log("Error in getAvailability",error);
+    return res.status(500).json({
+            message:"Internal Server Error!"
+        })
+    }
 }
