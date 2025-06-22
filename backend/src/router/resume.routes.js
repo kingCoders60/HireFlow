@@ -1,6 +1,6 @@
 import  express from "express";
 import multer from "multer";
-import {uploadResume} from "../controllers/resume.controller.js";
+import {uploadResume,getAllResume} from "../controllers/resume.controller.js";
 
 const router = express.Router();
 const storage = multer.diskStorage({
@@ -12,5 +12,6 @@ const storage = multer.diskStorage({
 });
 const upload = multer({ storage });
 router.post("/", upload.single("resume"), uploadResume);
+router.get("/",getAllResume);
 
 export default router;
