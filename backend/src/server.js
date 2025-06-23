@@ -11,6 +11,7 @@ const app = express();
 app.use(express.json());
 app.use('/api/resume',resumeRoutes);
 app.use("/api/availability", availabilityRoute);
+app.use("/uploads", express.static("uploads"));
 
 
 const allowedOrigins = [process.env.CLIENT_URL || "http://localhost:5173"];
@@ -20,9 +21,6 @@ app.use(
     credentials: true,
   })
 );
-
-
-
 
 app.get("/", (req, res) => {
   res.send("Reverse Logistics API running.");

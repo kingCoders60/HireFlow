@@ -1,4 +1,5 @@
 import Resume from "../models/resume.model.js"
+
 const extractSkillsFromFilename=(fileName)=>{
     const keywords = [
       "react",
@@ -30,6 +31,7 @@ export const uploadResume=async(req,res)=>{
             uploadedBy:null
         });
         await newResume.save();
+        console.log("Resume Uploaded",file.originalname);
         res.status(200).json({
             message:"Resume Upload Successfully!",
             Filename:file.originalname,
